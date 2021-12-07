@@ -26,10 +26,10 @@ public class Currency {
 	}
 
 	public String format(long amount) {
-		return (double)amount / minorPerMajor + "";
+		return (double)amount / (double)minorPerMajor + "";
 	}
 	
 	public long parse(String amount) {
-		return (int)(Double.parseDouble(amount)*minorPerMajor);
+		return (long)(Double.parseDouble(amount.substring(1))*minorPerMajor);
 	}
 }
