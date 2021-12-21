@@ -74,6 +74,7 @@ public class NumberUtils {
 		return numIntersect;
 	}
 	
+	// the main method is for testing the functions
 	public static void main(String[] args) {
 		int count = countIntersect(39628, 97324);
 		System.out.println("There are " + count + "  digits in common");
