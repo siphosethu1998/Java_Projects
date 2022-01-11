@@ -63,6 +63,32 @@ public class Athlete {
 		return splitTimes.size();
 	}
 
+	public Time getTimeAtWaypoint(int distanceA) {
+		// Obtain the time taken by the athlete to reach the waypoint at the given distance.
+		// Returns null if there is no data for the given distance.
+		for(int i=0; i<splitTimes.size(); i++) {
+			if(distanceA == splitTimes.get(i).getDistance()) {
+				return splitTimes.get(i).getTime();
+			} 
+		}
+		return null;
+	}
+	
+	public Time getWaypointInterval(int distanceA, int distanceB) {
+		// Obtain the time taken by the athlete to run from the waypoint at distance A
+		// to the waypoint at distance B.
+		// Assume that distanceA≤distanceB.
+		// Returns null if there is no data for one or other of the given distances.
+		Time a = getTimeAtWaypoint(distanceA);
+		Time b = getTimeAtWaypoint(distanceB);
+
+		if(a != null & b != null) {
+			return b.subtract(a);
+		}
+
+		return null;
+	}
+
 	public String toString() {
 		// Obtain a String representation of this object in the form
 		// "<race number> [<split time>, <split time, …, <split time>]".
@@ -88,6 +114,7 @@ public class Athlete {
 
 		Athlete athlete = new Athlete(line);
 		
+		System.out.println("The time at distance 2 is : "+athlete.getWaypointInterval(2, 4));
 		System.out.println("Creating Athlete object.");
 		System.out.println("Printing Athlete object:");
 		System.out.println(athlete);
