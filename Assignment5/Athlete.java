@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Arrays;
+import java.util.Iterator;
 
 public class Athlete {
 /*
@@ -89,6 +90,14 @@ public class Athlete {
 		return null;
 	}
 
+	public Iterator<SplitTime> iterator() {
+		// Obtain an iterator object that can be used to view split times, one after another.
+		// NOTE: 'Iterator' refers to the 'Iterator' class in 'java.util'.
+		// (HINT: To preserve data integrity, the method should create a copy of the SplitTimes list and
+		// return an Iterator for that.)
+		return (new ArrayList<SplitTime>(this.splitTimes)).iterator();
+	}
+
 	public String toString() {
 		// Obtain a String representation of this object in the form
 		// "<race number> [<split time>, <split time, …, <split time>]".
@@ -99,12 +108,13 @@ public class Athlete {
 	
 	// main method is just for testing the program
 	public static void main(String[] args) {
-		 /*ArrayList<SplitTime> t = new ArrayList<SplitTime>();
+		/*ArrayList<SplitTime> t = new ArrayList<SplitTime>();
 		 t.add(new SplitTime(new Time(0, 6, 57), 2));
 		 t.add(new SplitTime(new Time(0, 13, 54), 4));
 		 Athlete athlete = new Athlete("104566", t);
 		 System.out.println(athlete.getNumTimes());
-		 System.out.println(athlete); */
+		 System.out.println(athlete); 
+		*/
 
 		Scanner input = new Scanner(System.in);
 
