@@ -7,6 +7,14 @@ public class Vehicle {
         this.colour = colour;
     }
 
+	public int getPassengers() {
+		return numPassengers;
+	}
+	
+	public String getColour() {
+		return colour;
+	}
+
     public String toString() {
         return colour + " " + numPassengers + " passengers";
     }
